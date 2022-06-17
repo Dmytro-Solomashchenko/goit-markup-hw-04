@@ -205,11 +205,11 @@ img {
 
 .footer-boxes {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-soc {
   margin-left: 70px;
-  padding-top: 12px;
 }
 
 .footer-join {
@@ -602,8 +602,12 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.portfolio-projects-list .item:hover,
-.portfolio-projects-list .item:focus {
+
+.portfolio-projects-list .item .link {
+  display: block;
+}
+.portfolio-projects-list .item .link:hover,
+.portfolio-projects-list .item .link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
