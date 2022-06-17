@@ -14,8 +14,11 @@
   --tertiary-bg-color: #2f303a;
   --header-border-color: #ececec;
   --projects-border-color: #eeeeee;
+  --hero-bg-color: #c4c4c4;
 
   --button-hover-color: #188ce8;
+
+  --icon-color: #afb1b8;
 }
 
 body {
@@ -58,8 +61,18 @@ img {
   padding-right: 15px;
 }
 
-.hidden {
-  display: none;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .section {
@@ -153,6 +166,7 @@ img {
 .footer-contacts .link:focus {
   color: var(--accent-color);
 }
+
 /* --------------------------footer---------------------------- */
 
 .footer {
@@ -179,13 +193,57 @@ img {
 .footer-contacts .link {
   color: var(--footer-text-color);
 }
+
+.footer-boxes {
+  display: flex;
+}
+
+.footer-soc {
+  margin-left: 70px;
+  padding-top: 12px;
+}
+
+.footer-join {
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-soc-item + .footer-soc-item {
+  margin-left: 10px;
+}
+.footer-soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--accent-color);
+}
+
+.footer-soc-icon {
+  fill: var(--primary-bg-color);
+}
+
 /* ------------------------------------------------------------ */
 /*                       Index Main                             */
 /* ------------------------------------------------------------ */
 /*                   Index-Section1-Hero                        */
 .index-hero {
   text-align: center;
-  background-color: var(--tertiary-bg-color);
+  background-color: var(--hero-bg-color);
   padding-top: 200px;
   padding-bottom: 200px;
 }
@@ -224,6 +282,21 @@ img {
 .index-hero-button:focus {
   background-color: var(--button-hover-color);
 }
+
+.overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 /* ------------------------------------------------------------ */
 /*                    Index-Section2-Features                   */
 .index-features-list {
@@ -235,6 +308,7 @@ img {
 .index-features-list .item {
   width: 270px;
 }
+
 .index-features-list .item + .item {
   margin-left: 30px;
 }
@@ -255,6 +329,51 @@ img {
   margin-bottom: 0;
 }
 
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* .index-features-list .item::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-color: var(--secondary-bg-color);
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+/* .index-features-list .item:nth-child(1):before {
+  background-image: url(../images/antenna.svg);
+}
+.index-features-list .item:nth-child(2):before {
+  background-image: url(../images/clock.svg);
+}
+.index-features-list .item:nth-child(3):before {
+  background-image: url(../images/diagram.svg);
+}
+.index-features-list .item:nth-child(4):before {
+  background-image: url(../images/astronaut.svg);
+} */
+/* .index-features-list .antenna::before {
+  background-image: url(../images/antenna.svg);
+}
+.index-features-list .clock::before {
+  background-image: url(../images/clock.svg);
+}
+
+.index-features-list .diagramm::before {
+  background-image: url(../images/diagram.svg);
+}
+
+.index-features-list .astronaut::before {
+  background-image: url(../images/astronaut.svg);
+} */
 /* ------------------------------------------------------------ */
 /*                      Index-Section3-Work                     */
 .index-work {
@@ -296,6 +415,8 @@ img {
   width: 270px;
   border-radius: 0px 0px 4px 4px;
   overflow: hidden;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .index-team-list .item + .item {
@@ -319,6 +440,7 @@ img {
 
 .index-team-position {
   color: var(--secondary-text-color);
+  margin-bottom: 16px;
 }
 
 .index-team-crew,
@@ -333,6 +455,79 @@ img {
   padding-bottom: 30px;
   background-color: var(--primary-bg-color);
 }
+
+.team-soc-list {
+  display: flex;
+  justify-content: center;
+}
+
+.team-soc-item + .team-soc-item {
+  margin-left: 10px;
+}
+.team-soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-soc-link:hover,
+.team-soc-link:focus {
+  background-color: var(--accent-color);
+}
+.team-soc-icon {
+  fill: var(--icon-color);
+}
+.team-soc-link:hover .team-soc-icon,
+.team-soc-link:focus .team-soc-icon {
+  fill: var(--primary-bg-color);
+}
+/* ------------------------------------------------------------ */
+/*                     Index-Section5-Clients                   */
+.index-client-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--primary-text-color);
+  margin-bottom: 50px;
+}
+
+.client-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.client-item {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-item + .client-item {
+  margin-left: 30px;
+}
+
+.client-icon {
+  fill: var(--icon-color);
+}
+
+.client-item:hover,
+.client-item:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.client-item:hover .client-icon,
+.client-item:focus .client-icon {
+  fill: var(--accent-color);
+}
+*/
+
 /* ------------------------------------------------------------ */
 /*                      Portfolio-Main                          */
 /* ------------------------------------------------------------ */
